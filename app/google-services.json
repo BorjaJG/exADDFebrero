@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "64307925758",
+    "project_id": "exaddfebrero",
+    "storage_bucket": "exaddfebrero.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64307925758:android:73ca98cf99bdffcdb00baf",
+        "android_client_info": {
+          "package_name": "com.example.exaddfebrero"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6WyyotU2bx8XSWuj4mtI1CmwebhenzzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
