@@ -1,20 +1,69 @@
 package com.example.exaddfebrero
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.exaddfebrero.core.data.SharedPreferencesManager
+import com.example.exaddfebrero.core.domain.Coleccion
+import com.example.exaddfebrero.feature.album.domain.Album
+import com.example.exaddfebrero.feature.seta.domain.Seta
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var prefs: SharedPreferencesManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        prefs = SharedPreferencesManager(this)
+        val coleccion = Coleccion(
+            listOf(
+                Album(
+                    "1", "Álbum 1",
+                    listOf( // Lista de Setas
+                        Seta(
+                            "seta1", "Boletus", "Boletaceae", "Seta comestible",
+                            "foto_url", "43.0", "4.0", true
+                        ),
+                        Seta(
+                            "seta2", "Amanita", "Amanitaceae", "Seta venenosa",
+                            "foto_url", "44.0", "5.0", true
+                        )
+                    )
+                ),
+                Album(
+                    "2", "Álbum 2",
+                    listOf( // Otra lista de Setas
+                        Seta(
+                            "seta3", "Russula", "", "",
+                            "foto_url", "", "", false
+                        )
+                    )
+                )
+            )
+        )
+
+        prefs.saveColecion(coleccion)
+
+
+        val savedCollection = prefs.getColecion()
+        if (savedCollection != null) {
+            for (album in savedCollection.listAlbum) {
+                Log.d("MainActivity", "Álbum: ${album.name}")
+                for (seta in album.listaSetas) {
+                    Log.d("MainActivity", "Seta: ${seta.name}, Familia: ${seta.idSeta}")
+                }
+            }
+        } else {
+            Log.d("MainActivity", "No se encontró ninguna colección guardada.")
         }
     }
-}
+
+
+    }
+
+
+
+
+
+
