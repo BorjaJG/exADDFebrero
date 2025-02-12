@@ -22,12 +22,14 @@ class MainActivity : AppCompatActivity() {
                     "1", "Álbum 1",
                     listOf( // Lista de Setas
                         Seta(
-                            "seta1", "Boletus", "Boletaceae", "Seta comestible",
-                            "foto_url", "43.0", "4.0", true
+                            "1", "Boletus", "Boletaceae", "Seta comestible",
+                            "foto_url", "43.0", "4.0", true, "Amanitaceae",
+                            "Amanitaceae"
                         ),
                         Seta(
-                            "seta2", "Amanita", "Amanitaceae", "Seta venenosa",
-                            "foto_url", "44.0", "5.0", true
+                            "2", "Amanita", "Amanitaceae", "Seta venenosa",
+                            "foto_url", "44.0", "5.0", true, "Amanitaceae",
+                            "Amanitaceae"
                         )
                     )
                 ),
@@ -35,8 +37,9 @@ class MainActivity : AppCompatActivity() {
                     "2", "Álbum 2",
                     listOf( // Otra lista de Setas
                         Seta(
-                            "seta3", "Russula", "", "",
-                            "foto_url", "", "", false
+                            "3", "Russula", "", "",
+                            "foto_url", "", "", false, "Amanitaceae",
+                            "Amanitaceae"
                         )
                     )
                 )

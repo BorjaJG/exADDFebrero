@@ -8,5 +8,7 @@ class Seta (
     val longitud : String,
     val fecha : String,
     val hora: String,
-    val emcontrada: Boolean
+    val emcontrada: Boolean,
+    val familia: String,
+    val descripcion: String,
 )
