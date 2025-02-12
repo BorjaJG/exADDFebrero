@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
 }
 
 android {
@@ -51,4 +52,6 @@ dependencies {
     implementation(libs.androidx.room.guava)
     testImplementation(libs.androidx.room.testing)
     implementation(libs.androidx.room.paging)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 }
